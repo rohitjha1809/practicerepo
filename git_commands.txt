@@ -1,0 +1,31 @@
+List of git commands:
+1.	git init: 
+The git init command creates a new Git repository. It can be used to convert an existing, unversioned project to a Git repository or initialize a new, empty repository. Most other Git commands are not available outside of an initialized repository, so this is usually the first command you'll run in a new project.
+
+2.	git clone <http>:
+The git clone command is used to create a copy of a remote Git repository on your local machine. It allows you to clone a repository hosted on a remote server.
+
+3.	git remote add origin <http>:
+It establishes connection between remote(repo) and local repo. Once you have set the "origin," you can use other Git commands like git push, git pull, and git fetch to interact with the remote repository, sharing changes and collaborating with other developers.
+
+4.	git pull origin main:
+This command pulls the current version of the branch from the remote repo to local repo.
+git pull [<remote_name>] [<branch_name>]
+The git pull command is used to update your local repository with the latest changes from the remote repository. It combines two operations: fetching the remote changes and then merging them into your current branch.
+
+5.	git status:
+The git status command is used to display the current state of your local Git repository. It shows information about modified, staged, and untracked files, as well as the current branch and whether there are any differences between your local branch and the remote branch (if you have configured a remote repository).
+
+6.	git branch:
+The git branch command is used to list all the branches in your local Git repository. It shows both the local branches and any remote branches that have been tracked by your repository.
+	-v or --verbose: This option displays the last commit message and the commit hash for each branch.
+
+	--all: This option shows both local and remote branches.
+
+	--remote: This option shows only remote branches.
+
+git branch <new_branch_name> creates a new branch of specified name.
+
+git branch -d <branch_name> safely deletes the branch, will only delete if fully merged. You csnnot delete a branch that you have checked-out into.
+
+
