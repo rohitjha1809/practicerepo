@@ -36,3 +36,8 @@ The git checkout command in Git is used for various purposes, including switchin
  
 	git checkout <branch_name>: In some cases, git checkout can result in a "detached HEAD" state, which means you are not on any branch. Instead, you are directly pointing to a specific commit. It's not recommended to make new commits in this state. To get back to a branch, use git checkout with the branch name.
 
+
+8.	git merge:
+git merge <source_branch>
+The git merge command is used to combine changes from one branch into another. It allows you to integrate the changes made on one branch into a different branch. The most common use case for git merge is to bring changes from a feature branch into the main branch (or any other target branch) after completing and testing the feature.
+
