@@ -1,0 +1,21 @@
+1. git clone <http> vs git remote add origin <http>:
+>> git clone <http> clones the whole remote(git) repo to the local repo. Then we can work and make changes then add, commit and push changes.
+>> git add remote origin <http> establishes connection between remote(repo) and local repo. Once you have set the "origin," you can use other Git commands like git push, git pull, and git fetch to interact with the remote repository, sharing changes and collaborating with other developers.
+
+<<<<<<< HEAD
+2. Steps to merge branches to bring changes from master to main branch22:
+=======
+2. Steps to merge branches to bring changes from master to main branch1:
+>>>>>>> 353cc8b0a78020a1135f026bf98fcbe830462cfc
+>> First add, commit and push all the changes made in the master branch-
+	$ git add .
+	$ git commit -m "message"
+	$ git push orgin master
+>>Checkout to the main - $ git checkout main
+>>Merge branch master to main - $ git merge master
+>>Now add, commit and push all the merge made in the made branch-
+	$ git add .
+	$ git commit -m "message"
+	$ git push orgin main
+
+
