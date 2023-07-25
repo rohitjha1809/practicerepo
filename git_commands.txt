@@ -1,43 +1,44 @@
-List of git commands:
-1.	git init: 
-The git init command creates a new Git repository. It can be used to convert an existing, unversioned project to a Git repository or initialize a new, empty repository. Most other Git commands are not available outside of an initialized repository, so this is usually the first command you'll run in a new project.
-
-2.	git clone <http>:
-The git clone command is used to create a copy of a remote Git repository on your local machine. It allows you to clone a repository hosted on a remote server.
-
-3.	git remote add origin <http>:
-It establishes connection between remote(repo) and local repo. Once you have set the "origin," you can use other Git commands like git push, git pull, and git fetch to interact with the remote repository, sharing changes and collaborating with other developers.
-
-4.	git pull origin main:
-This command pulls the current version of the branch from the remote repo to local repo.
-git pull [<remote_name>] [<branch_name>]
-The git pull command is used to update your local repository with the latest changes from the remote repository. It combines two operations: fetching the remote changes and then merging them into your current branch.
-
-5.	git status:
-The git status command is used to display the current state of your local Git repository. It shows information about modified, staged, and untracked files, as well as the current branch and whether there are any differences between your local branch and the remote branch (if you have configured a remote repository).
-
-6.	git branch:
-The git branch command is used to list all the branches in your local Git repository. It shows both the local branches and any remote branches that have been tracked by your repository.
-	-v or --verbose: This option displays the last commit message and the commit hash for each branch.
-
-	--all: This option shows both local and remote branches.
-
-	--remote: This option shows only remote branches.
-
-git branch <new_branch_name> creates a new branch of specified name.
-
-git branch -d <branch_name> safely deletes the branch, will only delete if fully merged. You csnnot delete a branch that you have checked-out into.
-
-7.	git checkout:
-The git checkout command in Git is used for various purposes, including switching branches, checking out specific files or commits, and creating new branches.
-	git checkout <target_branch_name>: This command is used to switch to an existing branch in your repository. Replace <target_branch_name> with the name of the branch you want to switch to.
- 
-	git checkout -b <new_branch_name>: This command creates a new branch and switches to it in one step. Replace <new_branch_name> with the desired name for your new branch.
- 
-	git checkout <branch_name>: In some cases, git checkout can result in a "detached HEAD" state, which means you are not on any branch. Instead, you are directly pointing to a specific commit. It's not recommended to make new commits in this state. To get back to a branch, use git checkout with the branch name.
+git clone <http> vs git remote add origin <http>:
+>> git clone <http> clones the whole remote(git) repo to the local repo. Then we can work and make changes then add, commit and push changes.
+>> git add remote origin <http> establishes connection between remote(repo) and local repo. Once you have set the "origin," you can use other Git commands like git push, git pull, and git fetch to interact with the remote repository, sharing changes and collaborating with other developers.
 
 
-8.	git merge:
-git merge <source_branch>
-The git merge command is used to combine changes from one branch into another. It allows you to integrate the changes made on one branch into a different branch. The most common use case for git merge is to bring changes from a feature branch into the main branch (or any other target branch) after completing and testing the feature.
 
+Centralized Version Control System vs Distributed Version Control System:
+>> In CVCS the code stays in the server and everytime user has to login to server make changes.
+>>In DVCS the code stays in the server and a copy of that also stays with all the user, the user can make changes in the local repo and push the changes to the server when ever he logs in.
+
+
+
+git workflow and stages:
+
+The typical Git workflow involves the following stages:
+>>Creating or Modifying Files: 
+When you create or modify files in your working directory, they are initially untracked. Git is not yet aware of these changes.
+
+>>Adding Changes to the Staging Area:
+To include the changes in the next commit, you use the git add command to stage the files.
+The git add command moves the changes from the working directory to the staging area.
+
+>>Creating a Commit:
+After staging the changes, you create a commit using the git commit command.
+The git commit command permanently saves the changes in the Git repository along with a commit message that describes the changes.
+
+>>Pushing the changes:
+The primary purpose of git push is to synchronize your local commits and changes with the corresponding branch in the remote repository. It updates the remote repository with the work you have done locally.
+
+
+
+Steps to merge branches to bring changes from master to main branch:
+>> First add, commit and push all the changes made in the master branch-
+	$ git add .
+	$ git commit -m "message"
+	$ git push orgin master
+>>Checkout to the main - $ git checkout main
+>>Merge branch master to main - $ git merge master
+>>Now add, commit and push all the merge made in the made branch-
+	$ git add .
+	$ git commit -m "message"
+	$ git push orgin main
+	
+#>> Git is a software and github or git lab is a service.
